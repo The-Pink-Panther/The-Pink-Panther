@@ -1,0 +1,146 @@
+* {box-sizing: border-box;}
+
+    .wrapper {
+        max-width: 1920px;
+        margin: 0 auto;
+        font: 1.2em Helvetica, arial, sans-serif;
+    }
+
+    .wrapper > * {
+        border: 2px solid #484645;
+        background-color: #484645;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .wrapper-content {
+        max-width: 1920px;
+        margin: 0 auto;
+        font: 1.2em Helvetica, arial, sans-serif;
+    }
+
+    .wrapper-content > * {
+        border: 2px;
+        background-color: #484645;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+body {
+    background-image: url("images/background.jpg");
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    color: white;
+}
+.main-head {
+  grid-area: header;
+}
+.content {
+  grid-area: content;
+}
+.main-nav {
+  grid-area: nav;
+}
+.side {
+  grid-area: sidebar;
+}
+.ad {
+  grid-area: ad;
+}
+.main-footer {
+  grid-area: footer;
+}
+.overview{
+  grid-area: overview;
+}
+.video{
+  grid-area: video;
+  border: none;
+}
+.terrain{
+  grid-area: terrain;
+}
+.modding{
+  grid-area: modding;
+}
+.vehicles{
+  grid-area: vehicles;
+}
+.weaponary{
+  grid-area: weaponary;
+}
+
+a:visited {
+    color: white;
+}
+
+.wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-areas: 
+    "header"
+    "nav"
+    "content"
+    "sidebar"
+    "ad"
+    "footer";
+}
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+      "header  header"
+      "nav     nav"
+      "sidebar content"
+      "ad      footer";
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 700px) {
+  .wrapper {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+      "header header  header"
+      "nav    content sidebar"
+      "nav    content ad"
+      "footer footer  footer"
+   }
+   nav ul {
+     flex-direction: column;
+   }
+}
+
+.wrapper-content {
+  display: grid;
+  gap: 20px;
+  grid-template-areas: 
+    "overview"
+    "video"
+    "gridOne"
+    "gridTwo"
+    "gridThree"
+    "gridFour";
+}
+@media (min-width: 1000px) {
+  .wrapper-content {
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas: 
+      "overview video"
+      "gridOne gridTwo"
+      "gridThree gridFour";
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
